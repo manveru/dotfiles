@@ -1,0 +1,132 @@
+{ pkgs, ... }: {
+  home.packages = let
+    go             = pkgs.go_1_10;
+    buildGoPackage = pkgs.buildGoPackage.override { inherit go; };
+    gotools        = pkgs.gotools.override { inherit go buildGoPackage; };
+    gocode         = pkgs.gocode.override { inherit buildGoPackage; };
+    dep            = pkgs.dep.override { inherit buildGoPackage; };
+    godef          = pkgs.godef.override { inherit buildGoPackage; };
+  in with pkgs; [
+    texlive.combined.scheme-medium
+    tectonic
+    afl
+    anki
+    apacheHttpd
+    remarshal
+    aria2
+    aspell
+    audio-recorder
+    awscli
+    bundix
+    # calamares-3.1.10
+    cdrtools
+    chromium
+    cmatrix
+    compton
+    cool-retro-term
+    cpuminer-multi
+    ctags
+    davmail
+    dep
+    discord
+    dosbox
+    duff
+    elixir
+    entr
+    erlang
+    evince
+    exiv2
+    ffmpeg
+    fzf
+    fzy
+    gimp
+    gist
+    gitAndTools.git-crypt
+    networkmanagerapplet
+    gnome3.dconf
+    gitAndTools.git-extras
+    gitAndTools.hub
+    git-hub
+    git-lfs
+    glxinfo
+    gnome3.gcr
+    gnome3.seahorse
+    gnupg
+    go
+    gocode
+    godef
+    google-chrome
+    # gotools
+    gparted
+    # graphviz # conflicts with patchwork
+    gtypist
+    gucharmap
+    hex2nix
+    hfsprogs
+    hunspell
+    hunspellDicts.en-us
+    icdiff
+    inkscape
+    jdk
+    jitsi
+    kbfs
+    keybase
+    keybase-gui
+    keychain
+    keymon
+    kubernetes
+    libcaca
+    libnotify
+    libreoffice
+    libxfs
+    linkchecker
+    lnav
+    lyx
+    minecraft
+    mkpasswd
+    nix-prefetch-scripts
+    nix-repl
+    nix-serve
+    nixUnstable
+    nix-zsh-completions
+    notify-osd
+    openttd
+    owncloudclient
+    patchelf
+    pgcli
+    plan9port
+    playerctl
+    procps
+    python2nix
+    ranger
+    rebar3
+    ripgrep
+    rofi
+    rofi-menugen
+    rofi-pass
+    rtorrent
+    ruby_2_5
+    seafile-client
+    silver-searcher
+    simplescreenrecorder
+    skypeforlinux
+    sox
+    spotify
+    sqlitebrowser
+    teamspeak_client
+    thunderbird-bin
+    wakatime
+    wireshark-qt
+    xarchiver
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-dropbox-plugin
+    xfce.thunar_volman
+    xfce.xfce4icontheme
+    xfontsel
+    xfsprogs
+    xkblayout-state
+    xmlindent
+    youtube-dl
+  ];
+}
