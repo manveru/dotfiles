@@ -65,6 +65,7 @@ in {
             "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
             "${mod}+Tab" = "exec ${pkgs.rofi}/bin/rofi -show window";
             "${mod}+Shift+d" = "exec i3-dmenu-desktop";
+            "${mod}+Shift+p" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy";
 
             "${mod}+s" = "layout stacking";
             "${mod}+w" = "layout tabbed";
