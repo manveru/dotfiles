@@ -19,10 +19,12 @@
       unalias 9
       autoload -U down-line-or-beginning-search
       autoload -U up-line-or-beginning-search
-      bindkey '^[[A' down-line-or-beginning-search
+      bindkey '^[[B' down-line-or-beginning-search
       bindkey '^[[A' up-line-or-beginning-search
       zle -N down-line-or-beginning-search
       zle -N up-line-or-beginning-search
+      bindkey '^[[7~' beginning-of-line
+      bindkey '^[[8~' end-of-line
 
       eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
       eval "$(keychain --eval --quiet --noask --systemd ssh id_ed25519)"
