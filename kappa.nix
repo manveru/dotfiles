@@ -61,7 +61,15 @@
       shadow-offset-x = -5;   # The left offset for shadows. (default -15)
       shadow-offset-y = -5;   # The top offset for shadows. (default -15)
       shadow-opacity = 0.75;    # The translucency for shadows. (default .75)
-      shadow-exclude = [ "class_g ?= 'slingshot-launcher'", "class_g ?= 'plank'", "class_g ?= 'Notify-osd'", "class_g ?= 'gnome-pie-868'" ]
+      shadow-exclude = [
+        "class_g ?= 'slingshot-launcher'",
+        "class_g ?= 'plank'",
+        "class_g ?= 'Notify-osd'",
+        "class_g ?= 'gnome-pie-868'",
+        "name = 'cpt_frame_window'", # zoom desktop share
+        "name = 'as_toolbar'",       # zoom desktop share
+        "name = 'Polybar tray window'"
+      ]
       # shadown-exclude-reg = "x50+0-0";
 
       # Blur background of transparent windows.
