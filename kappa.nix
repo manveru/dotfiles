@@ -38,15 +38,8 @@
     enable = true;
     vSync = "opengl";
     fade = true;
-    # shadow = true;
     inactiveOpacity = "0.9";
     menuOpacity = "0.9";
-    # shadowExclude = [
-    #   "window_type *= 'menu'"
-    #   "name ~= 'Firefox\$'"
-    #   "focused = 1"
-    #   "class_i ~= 'rxvt\$'"
-    # ];
     opacityRule = [
       # "99:name *= 'Firefox'"
       # "99:class_i ~= 'rxvt\$'"
