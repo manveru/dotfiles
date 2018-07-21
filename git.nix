@@ -9,6 +9,7 @@
       ".envrc"
       "result"
       ".shell.drv"
+      ".direnv/"
       "#*#"
       ".#*"
     ];
