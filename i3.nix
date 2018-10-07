@@ -35,8 +35,8 @@ in {
             XF86AudioPause         = "exec ${pkgs.playerctl}/bin/playerctl pause";
             XF86AudioNext          = "exec ${pkgs.playerctl}/bin/playerctl next";
             XF86AudioPrev          = "exec ${pkgs.playerctl}/bin/playerctl previous";
-            "${mod}+Return"        = "exec urxvtc -pe confirm-paste";
-            "${mod}+Shift+Return"  = "exec urxvtc -pe confirm-paste -cd \"`xcwd`\"";
+            "${mod}+Return"        = "exec termite";
+            # "${mod}+Shift+Return"  = "exec urxvtc -pe confirm-paste -cd \"`xcwd`\"";
             "${mod}+Shift+less"    = "exec xbacklight -dec 33%";
             "${mod}+Shift+greater" = "exec xbacklight -inc 33%";
             "Muhenkan" = "exec \"if [[ $(xkblayout-state print %c) -eq 0 ]]; then xkblayout-state set 1; else xkblayout-state set 0; fi\"";
@@ -101,16 +101,20 @@ in {
               always = true;
               notification = false;
             }
-            {
-              command = "${pkgs.skypeforlinux}/bin/skypeforlinux";
-              always = true;
-            }
+            # {
+            #   command = "${pkgs.skypeforlinux}/bin/skypeforlinux";
+            #   always = true;
+            # }
             {
               command = "${pkgs.seafile-client}/bin/seafile-applet";
               always = true;
             }
             {
               command = "${pkgs.pidgin}/bin/pidgin";
+              always = true;
+            }
+            {
+              command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
               always = true;
             }
           ];

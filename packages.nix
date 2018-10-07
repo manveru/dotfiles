@@ -6,15 +6,23 @@
     gocode         = pkgs.gocode.override { inherit buildGoPackage; };
     dep            = pkgs.dep.override { inherit buildGoPackage; };
     godef          = pkgs.godef.override { inherit buildGoPackage; };
+    nixpkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+    nixpkgs-master = import (fetchGit { url = https://github.com/nixos/nixpkgs; ref = "master"; }) { config = { allowUnfree = true; }; };
   in with pkgs; [
     # calamares-3.1.10
     # gotools
-    # graphviz # conflicts with patchwork
+    # ibus-with-plugins
+    nixpkgs-unstable.alacritty
+    graphviz # conflicts with patchwork
     afl
     anki
     apacheHttpd
     aria2
     aspell
+    aspellDicts.en
+    aspellDicts.de
+    aspellDicts.en-computers
+    aspellDicts.en-science
     audio-recorder
     awscli
     bundix
@@ -58,7 +66,6 @@
     gnome3.seahorse
     gnupg
     go
-    gocode
     godef
     google-chrome
     gparted
@@ -68,17 +75,15 @@
     hfsprogs
     hunspell
     hunspellDicts.en-us
-    i3lock-pixeled
     i3lock-color
     i3lock-fancy
+    i3lock-pixeled
     icdiff
     inkscape
     jdk
     jitsi
     kbfs
     keepassxc
-    keybase
-    keybase-gui
     keychain
     keymon
     kubernetes
@@ -91,13 +96,12 @@
     lyx
     mc
     minecraft
+    minikube
     mkpasswd
     networkmanagerapplet
     nix-prefetch-scripts
-    nix-repl
     nix-serve
     nix-zsh-completions
-    nixUnstable
     notify-osd
     openttd
     owncloudclient
@@ -107,6 +111,7 @@
     playerctl
     procps
     python2nix
+    qalculate-gtk
     qt-recordmydesktop
     ranger
     rebar3
@@ -116,15 +121,22 @@
     rofi-menugen
     rofi-pass
     rtorrent
-    ruby_2_5
     seafile-client
     silver-searcher
     simplescreenrecorder
-    skypeforlinux
+    nixpkgs-unstable.skypeforlinux
+    nixpkgs-unstable.bat
+    nixpkgs-unstable.insomnia
     sloccount
     slock
+    st
     tectonic
-    texlive.combined.scheme-medium
+    termite
+    # terraform-full
+    # terraform-inventory
+    # terraform-landscape
+    # terragrunt
+    # texlive.combined.scheme-medium
     sox
     spotify
     sqlitebrowser
@@ -143,5 +155,6 @@
     xkblayout-state
     xmlindent
     youtube-dl
+    yq
   ];
 }

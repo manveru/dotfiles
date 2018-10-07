@@ -23,7 +23,7 @@
         pager = "less -R";
         autocrlf = "input";
         editor = "nvim";
-        excludesfile = /home/manveru/.gitignore_global;
+        # excludesfile = /home/manveru/.gitignore_global;
       };
       user = {
         name = "Michael Fellinger";
@@ -36,7 +36,7 @@
         showUntrackedFiles = "all";
       };
       transfer = {
-        fsckobjects = true;
+        fsckobjects = false;
       };
       push = {
         default = "current";

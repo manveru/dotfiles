@@ -30,7 +30,7 @@
           ;;
       esac
 
-      ibus-daemon --xim &
+      fcitx &
       urxvtd -q -f -o
     '';
   };

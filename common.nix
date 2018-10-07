@@ -3,12 +3,14 @@
   imports = [
     ./dunst.nix
     ./files.nix
+    ./gems.nix
     ./git.nix
     ./i3.nix
     ./packages.nix
     ./polybar.nix
     ./private.nix
     ./rofi.nix
+    ./termite.nix
     ./unclutter.nix
     ./xresources.nix
     ./xsession.nix
@@ -18,11 +20,16 @@
   nixpkgs.config.allowUnfree = true;
 
   home.sessionVariables = {
-    GTK_IM_MODULE = "ibus";
     LC_CTYPE = "en_US.UTF-8";
-    QT_IM_MODULE = "ibus";
-    XMODIFIERS = "@im=ibus";
+    # GTK_IM_MODULE = "ibus";
+    # QT_IM_MODULE = "ibus";
+    # XMODIFIERS = "@im=ibus";
+    XMODIFIERS = "@im=fcitx";
+    XMODIFIER = "@im=fcitx";
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
     BROWSER = "firefox";
+    PAGER = "less -R";
   };
 
   xdg.enable = true;
@@ -33,6 +40,7 @@
   };
 
   services = {
+    pasystray.enable = true;
     parcellite.enable = true;
     blueman-applet.enable = true;
 
@@ -67,6 +75,10 @@
   };
 
   programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     command-not-found.enable = true;
     feh.enable = true;
 

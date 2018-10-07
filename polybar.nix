@@ -18,8 +18,12 @@ in {
       enable = true;
       package = pkgs.polybar.override {
         i3GapsSupport = true;
+        pulseSupport = true;
         alsaSupport = true;
-        iwSupport = true;
+        # iwSupport = true;
+        # nlSupport = true;
+        # wirelesstools = pkgs.wirelesstools;
+        # libnl = pkgs.libnl;
         githubSupport = true;
       };
 
@@ -410,6 +414,7 @@ in {
             " | grep 'Default Sink'" +
             " | sed 's/.*analog-stereo//'" +
             " | sed 's/.*auto_null/${icons.microphone-disconnected}/'" +
+            " | sed 's/.*hdmi-stereo-extra.*/HDMI/'" +
             " | sed 's/.*headset_head_unit/${icons.microphone}/'" +
             " | sed 's/.*a2dp_sink/${icons.microphone-muted}/'";
 
@@ -420,7 +425,7 @@ in {
         };
 
         "module/spotify" = let
-          polybar-spotify = (import /home/manveru/go/src/github.com/manveru/polybar-spotify) {};
+          polybar-spotify = (import /home/manveru/go/src/github.com/manveru/polybar-spotify) { inherit pkgs; };
           # polybar-spotify = import (fetchGit {
           #   url = "https://github.com/manveru/polybar-spotify.git";
           #   ref = "0.1.1";

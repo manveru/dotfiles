@@ -16,18 +16,29 @@
       open = "xdg-open";
     };
     initExtra = ''
+      # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
+      export KEYTIMEOUT=1
+
+      bindkey '^[[7~' beginning-of-line
+      bindkey '^[[8~' end-of-line
+
       unalias 9
+
       autoload -U down-line-or-beginning-search
       autoload -U up-line-or-beginning-search
+
       bindkey '^[[B' down-line-or-beginning-search
       bindkey '^[[A' up-line-or-beginning-search
       zle -N down-line-or-beginning-search
       zle -N up-line-or-beginning-search
-      bindkey '^[[7~' beginning-of-line
-      bindkey '^[[8~' end-of-line
 
-      eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
-      eval "$(keychain --eval --quiet --noask --systemd ssh id_ed25519)"
+      bindkey -M vicmd "^V" edit-command-line
+      bindkey -M vicmd "v" visual-mode
+      bindkey -M vicmd "V" visual-line-mode
+
+      export PATH="$HOME/go/bin/:$PATH"
+      # eval "$(direnv hook zsh)"
+      eval "$(${pkgs.keychain}/bin/keychain --eval --quiet --noask --systemd ssh id_ed25519)"
 
       nixify() {
         if [ ! -e shell.nix ]; then
@@ -43,7 +54,7 @@
     '';
     oh-my-zsh = {
       enable = true;
-      theme = "flazz";
+      theme = "muse";
       plugins = [
         "docker"
         "encode64"
@@ -51,7 +62,6 @@
         "git-extras"
         "man"
         "nmap"
-        "nyan"
         "ssh-agent"
         "sudo"
         "tig"

@@ -1,4 +1,15 @@
 { ... }: {
+  home.file.".gitignore".text = ''
+    .*.~undo-tree~
+    *.~undo-tree~
+    .envrc
+    result
+    .shell.drv
+    .direnv/
+    #*#
+    .#*
+  '';
+
   home.file.".config/pgcli/config".text = ''
     [main]
     wider_completion_menu = True
