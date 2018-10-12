@@ -24,7 +24,7 @@
         padding = 5;
         horizontal_padding = 5;
         separator_color = "frame";
-        startup_notification = true;
+        startup_notification = false;
         show_indicators = "no";
         frame_width = 1;
         frame_color = "#000000";
