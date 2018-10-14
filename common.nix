@@ -15,21 +15,20 @@
     ./xresources.nix
     ./xsession.nix
     ./zsh.nix
+    ./gems.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
 
   home.sessionVariables = {
+    BROWSER = "firefox";
     LC_CTYPE = "en_US.UTF-8";
-    # GTK_IM_MODULE = "ibus";
-    # QT_IM_MODULE = "ibus";
-    # XMODIFIERS = "@im=ibus";
-    XMODIFIERS = "@im=fcitx";
-    XMODIFIER = "@im=fcitx";
+    PAGER = "less -R";
+
     GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
-    BROWSER = "firefox";
-    PAGER = "less -R";
+    XMODIFIER = "@im=fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 
   xdg.enable = true;
