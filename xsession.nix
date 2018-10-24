@@ -24,7 +24,7 @@
           setroot --span ${./blackhole.jpg} --tint black
           ;;
         (tau)
-          # xrandr --output eDP1 --auto --below HDMI2 --output HDMI2 --auto
+          xrandr --output eDP1 --auto --below HDMI2 --output HDMI2 --auto
           setxkbmap -layout en_US
           setroot --center ${./blackhole.jpg} --tint black
           ;;

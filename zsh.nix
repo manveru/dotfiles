@@ -36,7 +36,7 @@
       bindkey -M vicmd "v" visual-mode
       bindkey -M vicmd "V" visual-line-mode
 
-      export PATH="$HOME/go/bin/:$PATH"
+      export PATH="$HOME/go/bin:$PATH"
       # eval "$(direnv hook zsh)"
       eval "$(${pkgs.keychain}/bin/keychain --eval --quiet --noask --systemd ssh id_ed25519)"
 
@@ -56,6 +56,7 @@
       enable = true;
       theme = "muse";
       plugins = [
+        "aws"
         "docker"
         "encode64"
         "git"
@@ -64,12 +65,12 @@
         "nmap"
         "ssh-agent"
         "sudo"
+        "systemd"
         "tig"
+        "tmux"
         "vi-mode"
         "yarn"
         "zsh-navigation-tools"
-        "systemd"
-        "tmux"
       ];
     };
   };
