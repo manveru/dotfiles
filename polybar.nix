@@ -416,7 +416,8 @@ in {
             " | sed 's/.*auto_null/${icons.microphone-disconnected}/'" +
             " | sed 's/.*hdmi-stereo-extra.*/HDMI/'" +
             " | sed 's/.*headset_head_unit/${icons.microphone}/'" +
-            " | sed 's/.*a2dp_sink/${icons.microphone-muted}/'";
+            " | sed 's/.*a2dp_sink/${icons.microphone-muted}/'" +
+            " | sed 's/.*hdmi-stereo/HDMI/'";
 
           tail = true;
           interval = 2;

@@ -1,12 +1,16 @@
 { pkgs, ... }: {
   home.packages = let
-    go             = pkgs.go_1_10;
+    go             = pkgs.go_1_11;
     buildGoPackage = pkgs.buildGoPackage.override { inherit go; };
     gotools        = pkgs.gotools.override { inherit go buildGoPackage; };
     gocode         = pkgs.gocode.override { inherit buildGoPackage; };
     dep            = pkgs.dep.override { inherit buildGoPackage; };
     godef          = pkgs.godef.override { inherit buildGoPackage; };
     nixpkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
+    nixpkgs-seafile = import (fetchTarball {
+      url = https://github.com/schmittlauch/nixpkgs/archive/f135007e8c579dfd6e7dc83fdf9e6c83706f317f.tar.gz;
+      sha256 = "06b58xjkrhpd6z9vx19g6jgx9pkb0ihay3aqgyqpbipc63hvpa6g";
+    }) {};
     nixpkgs-master = import (fetchGit { url = https://github.com/nixos/nixpkgs; ref = "master"; }) { config = { allowUnfree = true; }; };
   in with pkgs; [
     afl
@@ -86,6 +90,11 @@
     insomnia
     jdk
     jitsi
+    blink
+    ekiga
+    belle-sip
+    sipsak
+    sofia_sip
     kbfs
     kdeApplications.dolphin
     kdeApplications.dolphin-plugins
@@ -121,6 +130,7 @@
     owncloudclient
     oxygen
     patchelf
+    perkeep
     pgcli
     plan9port
     playerctl
@@ -136,7 +146,7 @@
     rofi-menugen
     rofi-pass
     rtorrent
-    seafile-client
+    (nixpkgs-seafile.seafile-client)
     silver-searcher
     simplescreenrecorder
     skypeforlinux

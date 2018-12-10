@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   xsession.windowManager.i3.extraConfig = ''
-    workspace  1 output DVI-D-0
-    workspace  2 output DVI-D-0
-    workspace  3 output DVI-D-0
+    workspace  1 output DP-0
+    workspace  2 output DP-0
+    workspace  3 output DP-0
     workspace  4 output DP-3
     workspace  5 output DP-3
     workspace  6 output DP-3

@@ -20,7 +20,7 @@
           setxkbmap -layout jp
           ;;
         (kappa)
-          xrandr --output DVI-D-0 --auto --output DP-3 --primary --auto --right-of DVI-D-0 --output HDMI-0 --auto --right-of DP-3
+          xrandr --output DP-0 --auto --output DP-3 --primary --auto --right-of DP-0 --output HDMI-0 --auto --right-of DP-3
           setroot --span ${./blackhole.jpg} --tint black
           ;;
         (tau)
