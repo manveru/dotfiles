@@ -3,7 +3,7 @@
   imports = [
     ./dunst.nix
     ./files.nix
-    ./gems.nix
+    # ./gems.nix
     ./git.nix
     ./i3.nix
     ./packages.nix
@@ -15,7 +15,6 @@
     ./xresources.nix
     ./xsession.nix
     ./zsh.nix
-    ./gems.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

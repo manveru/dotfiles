@@ -25,6 +25,8 @@
     audio-recorder
     awscli
     bat
+    belle-sip
+    blink
     breeze-icons
     bundix
     # calamares-3.1.10
@@ -47,10 +49,12 @@
     discord
     dosbox
     duff
+    ekiga
     elixir
     entr
     erlang
     evince
+    exercism
     exiv2
     ffmpeg
     ffmpegthumbs
@@ -90,23 +94,18 @@
     insomnia
     jdk
     jitsi
-    blink
-    ekiga
-    belle-sip
-    sipsak
-    sofia_sip
     kbfs
     kdeApplications.dolphin
     kdeApplications.dolphin-plugins
     kdeApplications.kdegraphics-thumbnailers
     kdeApplications.kio-extras
     kdeApplications.print-manager
-    keepassxc
     kdeFrameworks.kemoticons
+    kdeFrameworks.kiconthemes
+    keepassxc
     keychain
     keymon
     khelpcenter
-    kdeFrameworks.kiconthemes
     konsole
     kubernetes
     libcaca
@@ -114,6 +113,7 @@
     libreoffice
     libxfs
     linkchecker
+    linuxConsoleTools
     lnav
     lyx
     mc
@@ -121,6 +121,8 @@
     minikube
     mkpasswd
     networkmanagerapplet
+    nitrogen # A wallpaper browser and setter for X11
+    (nixpkgs-seafile.seafile-client)
     # nixpkgs-unstable.alacritty
     nix-prefetch-scripts
     nix-serve
@@ -146,12 +148,14 @@
     rofi-menugen
     rofi-pass
     rtorrent
-    (nixpkgs-seafile.seafile-client)
+    ruby
     silver-searcher
     simplescreenrecorder
+    sipsak
     skypeforlinux
     sloccount
     slock
+    sofia_sip
     sox
     spotify
     sqlitebrowser
