@@ -12,7 +12,11 @@
       ".direnv/"
       "#*#"
       ".#*"
+      ".tern-port"
     ];
+
+    userEmail = "michael.fellinger@xing.com";
+    userName = "Michael Fellinger";
 
     signing = {
       key = "068A7479";
@@ -24,10 +28,6 @@
         autocrlf = "input";
         editor = "nvim";
         # excludesfile = /home/manveru/.gitignore_global;
-      };
-      user = {
-        name = "Michael Fellinger";
-        email = "michael.fellinger@xing.com";
       };
       credential = {
         helper = "netrc";
@@ -66,9 +66,6 @@
         stat = true;
         autoSquash = true;
         autostash = true;
-      };
-      gpg = {
-        program = "gpg2";
       };
       diff = {
         tool = "icdiff";
