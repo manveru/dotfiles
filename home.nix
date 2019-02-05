@@ -2,13 +2,12 @@
 with builtins;
 let
   hostname = replaceStrings ["\n"] [""] (readFile /etc/hostname);
-  private = import ./private.nix { inherit pkgs; };
   hosts = {
     tau = ./tau.nix;
     kappa = ./kappa.nix;
     nu = ./nu.nix;
   };
-in private // {
+in {
   imports = [
     ./common.nix
     hosts.${hostname}

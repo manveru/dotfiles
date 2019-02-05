@@ -38,6 +38,7 @@
   };
 
   services = {
+    flameshot.enable = true;
     pasystray.enable = true;
     parcellite.enable = true;
     blueman-applet.enable = true;

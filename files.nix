@@ -1,4 +1,12 @@
 { ... }: {
+  home.file.".config/Dharkael/flameshot.ini".text = ''
+    [General]
+    disabledTrayIcon=false
+    drawColor=@Variant(\0\0\0\x43\x1\xff\xff\0\0\0\0\xff\xff\0\0)
+    drawThickness=0
+    filenamePattern=%F_%T_shot
+  '';
+
   home.file.".gitignore".text = ''
     .*.~undo-tree~
     *.~undo-tree~
