@@ -118,7 +118,6 @@ in {
         "module/cpu" = {
           type = "internal/cpu";
           interval = 2;
-          format = "<label> <ramp-coreload>";
 
           format-prefix-foreground = foreground-alt;
           format-underline = "#07ACFF";
@@ -137,7 +136,6 @@ in {
 
         "module/memory" = {
           type = "internal/memory";
-          format = "<label> <bar-used>";
           format-prefix = "${icons.memory} ";
           format-prefix-foreground = foreground-alt;
           format-underline = "#05D8E8";
@@ -259,7 +257,6 @@ in {
 
         "module/wlan" = {
           type = "internal/network";
-          interface = "wlp3s0";
           interval = "3.0";
 
           format-connected = "<ramp-signal> <label-connected>";

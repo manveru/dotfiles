@@ -143,7 +143,6 @@ in {
             modifier = "Mod4";
             criteria = [
               {title = "Steam - Update News";}
-              {class = "Pavucontrol";}
               {title="^GoUI$";}
               {class="^Jitsi$"; instance="^sun-awt-X11-XFramePeer$";}
               {class="^Jitsiium$"; instance="^sun-awt-X11-XFramePeer$";}

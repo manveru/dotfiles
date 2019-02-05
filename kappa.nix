@@ -15,6 +15,8 @@
 
   services.polybar.config."module/filesystem".mount-1 = "/big";
   services.polybar.config."module/eth".interface = "enp3s0";
+  services.polybar.config."module/cpu".format = "<label> <ramp-coreload>";
+  services.polybar.config."module/memory".format = "<label> <bar-used>";
   services.polybar.script = with pkgs; ''
     set -ex
 

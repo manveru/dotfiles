@@ -30,6 +30,7 @@
     breeze-icons
     bundix
     # calamares-3.1.10
+    calligra
     cdrtools   # CD/DVD/BluRay command line recording software
     cheat      # allows you to create and view interactive cheatsheets on the command-line
     chromium
@@ -120,6 +121,7 @@
     minecraft
     minikube
     mkpasswd
+    mysql-workbench
     networkmanagerapplet
     nitrogen # A wallpaper browser and setter for X11
     (nixpkgs-seafile.seafile-client)
