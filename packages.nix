@@ -7,10 +7,6 @@
     dep            = pkgs.dep.override { inherit buildGoPackage; };
     godef          = pkgs.godef.override { inherit buildGoPackage; };
     nixpkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
-    nixpkgs-seafile = import (fetchTarball {
-      url = https://github.com/schmittlauch/nixpkgs/archive/f135007e8c579dfd6e7dc83fdf9e6c83706f317f.tar.gz;
-      sha256 = "06b58xjkrhpd6z9vx19g6jgx9pkb0ihay3aqgyqpbipc63hvpa6g";
-    }) {};
     nixpkgs-master = import (fetchGit { url = https://github.com/nixos/nixpkgs; ref = "master"; }) { config = { allowUnfree = true; }; };
   in with pkgs; [
     afl
@@ -127,7 +123,7 @@
     mysql-workbench
     networkmanagerapplet
     nitrogen # A wallpaper browser and setter for X11
-    (nixpkgs-seafile.seafile-client)
+    seafile-client
     # nixpkgs-unstable.alacritty
     nixpkgs-unstable.zoom-us
     nix-prefetch-scripts
