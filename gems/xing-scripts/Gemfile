@@ -1,4 +1,3 @@
 source 'https://gems.xing.com' do
-  gem 'xing-docker_build'
   gem "xing-scripts"
 end

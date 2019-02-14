@@ -1,7 +1,7 @@
 GEM
   remote: https://gems.xing.com/
   specs:
-    addressable (2.5.2)
+    addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     cookiejar (0.3.3)
     domain_name (0.5.20180417)
@@ -23,22 +23,21 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     naturalsort (1.2.0)
-    net-ssh (5.0.2)
+    net-ssh (5.1.0)
     netrc (0.11.0)
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    thor (0.20.0)
+    thor (0.20.3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    unicode-display_width (1.4.0)
-    xing-docker_build (1.50.0)
-    xing-scripts (1.26.0)
+    unicode-display_width (1.4.1)
+    xing-scripts (1.27.0)
       em-http-request
       eventmachine (~> 1.0)
       json
@@ -52,8 +51,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  xing-docker_build!
   xing-scripts!
 
 BUNDLED WITH
-   1.16.2
+   1.16.3

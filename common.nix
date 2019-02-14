@@ -3,7 +3,7 @@
   imports = [
     ./dunst.nix
     ./files.nix
-    # ./gems.nix
+    ./gems.nix
     ./git.nix
     ./i3.nix
     ./packages.nix
@@ -38,6 +38,7 @@
   };
 
   services = {
+    emacs.enable = true;
     flameshot.enable = true;
     pasystray.enable = true;
     parcellite.enable = true;
@@ -74,6 +75,7 @@
   };
 
   programs = {
+    emacs.enable = true;
     direnv = {
       enable = true;
       enableZshIntegration = true;

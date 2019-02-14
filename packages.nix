@@ -39,6 +39,7 @@
     cool-retro-term
     #cpuminer-multi
     ctags
+    ctags
     davmail
     dep
     dhall      # A configuration language guaranteed to terminate
@@ -50,6 +51,7 @@
     discord
     dosbox
     duff
+    easyrsa
     ekiga
     elixir
     entr
@@ -84,6 +86,7 @@
     hex2nix
     hfsprogs
     hicolor-icon-theme
+    hipchat
     hunspell
     hunspellDicts.en-us
     i3lock-color
@@ -126,31 +129,47 @@
     nitrogen # A wallpaper browser and setter for X11
     (nixpkgs-seafile.seafile-client)
     # nixpkgs-unstable.alacritty
+    nixpkgs-unstable.zoom-us
     nix-prefetch-scripts
     nix-serve
     nix-zsh-completions
+    nodejs-8_x
+    notify-osd
     notify-osd
     openttd
+    optipng
     owncloudclient
     oxygen
+    parallel
+    pass
     patchelf
+    pavucontrol
     perkeep
     pgcli
     plan9port
     playerctl
+    pmount
     procps
+    pwgen
+    python
     python2nix
     qalculate-gtk
+    qemu
     qt-recordmydesktop
     ranger
     rebar3
     remarshal
     ripgrep
+    rlwrap
     rofi
     rofi-menugen
     rofi-pass
     rtorrent
     ruby
+    rxvt_unicode-with-plugins
+    scrot
+    setroot
+    shellcheck
     silver-searcher
     simplescreenrecorder
     sipsak
@@ -162,6 +181,7 @@
     spotify
     sqlitebrowser
     st
+    svnfs
     teamspeak_client
     tectonic
     termite
@@ -171,9 +191,20 @@
     # terragrunt
     # texlive.combined.scheme-medium
     thunderbird-bin
+    tmate
+    vlc
+    volumeicon
     wakatime
+    wbox
     wireshark-qt
+    wrk
+    wxcam
     xarchiver
+    xbrightness
+    xclip
+    xcwd
+    xdg_utils
+    xdotool
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-dropbox-plugin
@@ -183,6 +214,8 @@
     xfsprogs
     xkblayout-state
     xmlindent
+    xsel
+    xtitle
     youtube-dl
     yq
   ];

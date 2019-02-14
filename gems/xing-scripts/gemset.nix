@@ -3,10 +3,10 @@
     dependencies = ["public_suffix"];
     source = {
       remotes = ["https://gems.xing.com"];
-      sha256 = "0viqszpkggqi8hq87pqp0xykhvz60g99nwmkwsb0v45kc2liwxvk";
+      sha256 = "0bcm2hchn897xjhqj9zzsxf3n9xhddymj4lsclz508f4vw3av46l";
       type = "gem";
     };
-    version = "2.5.2";
+    version = "2.6.0";
   };
   cookiejar = {
     source = {
@@ -104,10 +104,10 @@
   net-ssh = {
     source = {
       remotes = ["https://gems.xing.com"];
-      sha256 = "0qfanf71yv8w7yl9l9wqcy68i2x1ghvnf8m581yy4pl0anfdhqw8";
+      sha256 = "0jglf8rxvlw6is5019r6kwsdhw38zm3z39jbghdbj449r6h7h77n";
       type = "gem";
     };
-    version = "5.0.2";
+    version = "5.1.0";
   };
   netrc = {
     source = {
@@ -120,10 +120,10 @@
   public_suffix = {
     source = {
       remotes = ["https://gems.xing.com"];
-      sha256 = "1x5h1dh1i3gwc01jbg01rly2g6a1qwhynb1s8a30ic507z1nh09s";
+      sha256 = "08q64b5br692dd3v0a9wq9q5dvycc6kmiqmjbdxkxbfizggsvx6l";
       type = "gem";
     };
-    version = "3.0.2";
+    version = "3.0.3";
   };
   rest-client = {
     dependencies = ["http-cookie" "mime-types" "netrc"];
@@ -146,10 +146,10 @@
   thor = {
     source = {
       remotes = ["https://gems.xing.com"];
-      sha256 = "0nmqpyj642sk4g16nkbq6pj856adpv91lp4krwhqkh2iw63aszdl";
+      sha256 = "1yhrnp9x8qcy5vc7g438amd5j9sw83ih7c30dr6g6slgw9zj3g29";
       type = "gem";
     };
-    version = "0.20.0";
+    version = "0.20.3";
   };
   unf = {
     dependencies = ["unf_ext"];
@@ -171,26 +171,18 @@
   unicode-display_width = {
     source = {
       remotes = ["https://gems.xing.com"];
-      sha256 = "0040bsdpcmvp8w31lqi2s9s4p4h031zv52401qidmh25cgyh4a57";
+      sha256 = "0bq528fibi8s0jmxz0xzlgzggdq0x4fx46wfqz49478pv8gb2diq";
       type = "gem";
     };
-    version = "1.4.0";
-  };
-  xing-docker_build = {
-    source = {
-      remotes = ["https://gems.xing.com"];
-      sha256 = "0dxly74v28bqlxx3l7bgblq748a0jpmmicryqpwksvf1wh4w20kf";
-      type = "gem";
-    };
-    version = "1.50.0";
+    version = "1.4.1";
   };
   xing-scripts = {
     dependencies = ["em-http-request" "eventmachine" "json" "naturalsort" "net-ssh" "rest-client" "terminal-table" "thor"];
     source = {
       remotes = ["https://gems.xing.com"];
-      sha256 = "00m76cbjfc54as2bkldfwrc7iww4ka1b0yycy2s1prln725xm83m";
+      sha256 = "0p8zmd99h4x2wrhawpr7inyd607y9d7fkakh68vffpswj8dnpz0f";
       type = "gem";
     };
-    version = "1.26.0";
+    version = "1.27.0";
   };
 }
