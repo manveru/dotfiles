@@ -1,0 +1,13 @@
+GEM
+  remote: https://gems.xing.com/
+  specs:
+    xing-docker_build (1.70.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  xing-docker_build!
+
+BUNDLED WITH
+   1.17.2

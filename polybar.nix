@@ -16,16 +16,14 @@ in {
   services = {
     polybar = {
       enable = true;
-      package = pkgs.polybar.override {
-        i3GapsSupport = true;
-        pulseSupport = true;
-        alsaSupport = true;
-        # iwSupport = true;
-        # nlSupport = true;
-        # wirelesstools = pkgs.wirelesstools;
-        # libnl = pkgs.libnl;
+
+      package = pkgs.polybar.overrideAttrs (old: {
+        alsaSupport   = true;
         githubSupport = true;
-      };
+        mpdSupport    = true;
+        pulseSupport  = true;
+        i3GapsSupport = true;
+      });
 
       config = let
         background = "\${xrdb:color0:#222}";

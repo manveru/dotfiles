@@ -39,7 +39,7 @@ in {
             XF86AudioPause         = "exec ${pkgs.playerctl}/bin/playerctl pause";
             XF86AudioNext          = "exec ${pkgs.playerctl}/bin/playerctl next";
             XF86AudioPrev          = "exec ${pkgs.playerctl}/bin/playerctl previous";
-            "${mod}+Return"        = "exec termite";
+            "${mod}+Return"        = "exec ${pkgs.termite}/bin/termite";
             # "${mod}+Shift+Return"  = "exec urxvtc -pe confirm-paste -cd \"`xcwd`\"";
             "${mod}+Shift+less"    = "exec xbacklight -dec 33%";
             "${mod}+Shift+greater" = "exec xbacklight -inc 33%";

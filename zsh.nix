@@ -14,7 +14,10 @@
       v = "vim";
       c = "clear";
       open = "xdg-open";
+      vpn-on = "ENABLE_VPN=true sudo --preserve-env ENABLE_VPN nixos-rebuild switch";
+      vpn-off = "sudo nixos-rebuild switch";
     };
+
     initExtra = ''
       # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
       export KEYTIMEOUT=1
@@ -39,6 +42,10 @@
       export PATH="$HOME/go/bin:$PATH"
       # eval "$(direnv hook zsh)"
       eval "$(${pkgs.keychain}/bin/keychain --eval --quiet --noask --systemd ssh id_ed25519)"
+
+      # can't use fzf plugin because the share/shell folder is missing
+      source ${pkgs.fzf}/share/fzf/completion.zsh
+      source ${pkgs.fzf}/share/fzf/key-bindings.zsh
 
       nixify() {
         if [ ! -e shell.nix ]; then
@@ -73,6 +80,7 @@
         "vi-mode"
         "yarn"
         "zsh-navigation-tools"
+        "mix"
       ];
     };
   };

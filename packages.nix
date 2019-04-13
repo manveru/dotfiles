@@ -6,27 +6,36 @@
     gocode         = pkgs.gocode.override { inherit buildGoPackage; };
     dep            = pkgs.dep.override { inherit buildGoPackage; };
     godef          = pkgs.godef.override { inherit buildGoPackage; };
+    lorri          = pkgs.callPackage ./pkgs/lorri {};
+    hie            = pkgs.callPackage ./pkgs/hie {};
+
     nixpkgs-unstable = import <nixpkgs-unstable> { config = { allowUnfree = true; }; };
     nixpkgs-master = import (fetchGit { url = https://github.com/nixos/nixpkgs; ref = "master"; }) { config = { allowUnfree = true; }; };
   in with pkgs; [
+    slack
+    hie.hies
+    hie.ghc
+    hie.stack
+    lorri
+    atom
     afl
     anki
     apacheHttpd
     aria2
     aspell
+    # tahoe-lafs
     aspellDicts.de
     aspellDicts.en
     aspellDicts.en-computers
     aspellDicts.en-science
     audio-recorder
     awscli
-    bat
     belle-sip
     blink
     breeze-icons
     bundix
     # calamares-3.1.10
-    calligra
+    # calligra
     cdrtools   # CD/DVD/BluRay command line recording software
     cheat      # allows you to create and view interactive cheatsheets on the command-line
     chromium
@@ -41,17 +50,17 @@
     dhall      # A configuration language guaranteed to terminate
     dhall-bash # Compile Dhall to Bash
     dhall-json # Compile Dhall to JSON or YAML
-    dhall-nix  # Dhall to Nix compiler
+    # dhall-nix  # Dhall to Nix compiler
     dhall.prelude
     dhall-text # Template text using Dhall
-    discord
+    nixpkgs-unstable.discord
     dosbox
     duff
     easyrsa
     ekiga
-    elixir
+    # elixir
     entr
-    erlang
+    # erlang
     evince
     exercism
     exiv2
@@ -70,6 +79,7 @@
     gnome3.dconf
     gnome3.gcr
     gnome3.seahorse
+    gnome3.evolution
     gnupg
     go
     godef
@@ -85,13 +95,12 @@
     hipchat
     hunspell
     hunspellDicts.en-us
-    i3lock-color
     i3lock-fancy
-    i3lock-pixeled
     # ibus-with-plugins
     icdiff
     inkscape
     insomnia
+    nix-review
     jdk
     jitsi
     kbfs
@@ -107,6 +116,7 @@
     keymon
     khelpcenter
     konsole
+    krita
     kubernetes
     libcaca
     libnotify
@@ -116,6 +126,7 @@
     linuxConsoleTools
     lnav
     lyx
+    nixpkgs-unstable.magic-wormhole
     mc
     minecraft
     minikube
@@ -123,13 +134,12 @@
     mysql-workbench
     networkmanagerapplet
     nitrogen # A wallpaper browser and setter for X11
-    seafile-client
     # nixpkgs-unstable.alacritty
-    nixpkgs-unstable.zoom-us
+    # nixpkgs-unstable.zoom-us
     nix-prefetch-scripts
     nix-serve
     nix-zsh-completions
-    nodejs-8_x
+    nodejs-11_x
     notify-osd
     notify-osd
     openttd
@@ -141,7 +151,7 @@
     patchelf
     pavucontrol
     perkeep
-    pgcli
+    # pgcli
     plan9port
     playerctl
     pmount
@@ -171,10 +181,10 @@
     sipsak
     skypeforlinux
     sloccount
-    slock
     sofia_sip
     sox
     spotify
+    sqlite
     sqlitebrowser
     st
     svnfs
@@ -188,6 +198,7 @@
     # texlive.combined.scheme-medium
     thunderbird-bin
     tmate
+    up # writing Linux pipes with instant live preview
     vlc
     volumeicon
     wakatime

@@ -71,10 +71,21 @@
         day = "1";
         night = "0.5";
       };
+      temperature = {
+        night = 3000;
+        day = 5500;
+      };
     };
   };
 
   programs = {
+    bat = {
+      enable = true;
+      config = {
+        pager = "less -FR";
+        theme = "TwoDark";
+      };
+    };
     emacs.enable = true;
     direnv = {
       enable = true;
@@ -85,7 +96,7 @@
 
     home-manager = {
       enable = true;
-      path = https://github.com/rycee/home-manager/archive/master.tar.gz;
+      # path = https://github.com/rycee/home-manager/archive/master.tar.gz;
       # path = "/home/manveru/github/rycee/home-manager";
     };
 
@@ -96,6 +107,7 @@
         pidginosd
         pidgin-skypeweb
         pidgin-opensteamworks
+        purple-hangouts
       ];
     };
 
