@@ -43,6 +43,8 @@
     pasystray.enable = true;
     parcellite.enable = true;
     blueman-applet.enable = true;
+    syncthing.enable = true;
+    syncthing.tray = true;
 
     kdeconnect = {
       enable = true;
