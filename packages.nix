@@ -13,9 +13,9 @@
     nixpkgs-master = import (fetchGit { url = https://github.com/nixos/nixpkgs; ref = "master"; }) { config = { allowUnfree = true; }; };
   in with pkgs; [
     slack
-    hie.hies
-    hie.ghc
-    hie.stack
+    # hie.hies
+    # hie.ghc
+    # hie.stack
     lorri
     atom
     afl
@@ -42,7 +42,7 @@
     cmatrix
     compton
     cool-retro-term
-    #cpuminer-multi
+    # cpuminer-multi
     ctags
     ctags
     davmail
