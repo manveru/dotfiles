@@ -17,13 +17,13 @@ in {
     polybar = {
       enable = true;
 
-      package = pkgs.polybar.overrideAttrs (old: {
+      package = pkgs.polybar.override {
         alsaSupport   = true;
         githubSupport = true;
         mpdSupport    = true;
         pulseSupport  = true;
         i3GapsSupport = true;
-      });
+      };
 
       config = let
         background = "\${xrdb:color0:#222}";
@@ -68,7 +68,7 @@ in {
 
           modules-left = "i3";
           modules-center = "xwindow";
-          modules-right = " filesystem wlan eth memory cpu battery temperature headsetswitch date";
+          modules-right = "filesystem wlan eth memory cpu battery temperature headsetswitch date";
 
           tray-position = "right";
           tray-padding = 3;
@@ -295,8 +295,8 @@ in {
           format-warn-underline = "#0561E8";
           format-warn = "<ramp> <label-warn>";
 
-          label = "%temperature%";
-          label-warn = "%temperature%";
+          label = "%temperature%-c";
+          label-warn = "%temperature-c%";
           label-warn-foreground = secondary;
 
           ramp-0 = "";
