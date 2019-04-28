@@ -1,11 +1,4 @@
-{ pkgs, ... }:
-let
-  mod = "Mod4";
-    nixpkgs-seafile = import (fetchTarball {
-      url = https://github.com/schmittlauch/nixpkgs/archive/f135007e8c579dfd6e7dc83fdf9e6c83706f317f.tar.gz;
-      sha256 = "06b58xjkrhpd6z9vx19g6jgx9pkb0ihay3aqgyqpbipc63hvpa6g";
-    }) {};
-in {
+{ pkgs, ... }: {
   xsession = {
     enable = true;
 
@@ -35,7 +28,7 @@ in {
             };
           };
 
-          keybindings = {
+          keybindings = let mod = "Mod4"; in {
             XF86AudioPause         = "exec ${pkgs.playerctl}/bin/playerctl pause";
             XF86AudioNext          = "exec ${pkgs.playerctl}/bin/playerctl next";
             XF86AudioPrev          = "exec ${pkgs.playerctl}/bin/playerctl previous";
@@ -105,22 +98,18 @@ in {
               always = true;
               notification = false;
             }
-            # {
-            #   command = "${pkgs.skypeforlinux}/bin/skypeforlinux";
-            #   always = true;
-            # }
-            {
-              command = "${nixpkgs-seafile.seafile-client}/bin/seafile-applet";
-              always = true;
-            }
-            {
-              command = "${pkgs.pidgin}/bin/pidgin";
-              always = true;
-            }
             {
               command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
               always = true;
             }
+            # {
+            #   command = "${pkgs.skypeforlinux}/bin/skypeforlinux";
+            #   always = true;
+            # }
+            # {
+            #   command = "${pkgs.pidgin}/bin/pidgin";
+            #   always = true;
+            # }
           ];
 
           bars = [];
