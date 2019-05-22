@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  home.file.".config/ranger/rc.conf".text = ''
+    set preview_images true
+    ext svg = feh --conversion-timeout 2 -- "$@"
+  '';
   home.file.".config/Dharkael/flameshot.ini".text = ''
     [General]
     disabledTrayIcon=false

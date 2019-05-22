@@ -7,7 +7,6 @@
 
       xset -b # turn bell off
       xset dpms 1000 2000 3000 # <Standby> <Suspend> <Off>
-      xset s off # screensaver off
       xset r rate 150
 
       setroot --center ${./blackhole.jpg} --tint black
@@ -24,6 +23,7 @@
         (kappa)
           xrandr --output DP-0 --auto --output DP-3 --primary --auto --right-of DP-0 --output HDMI-0 --auto --right-of DP-3
           setroot --span ${./blackhole.jpg} --tint black
+          xset s off # screensaver off
           ;;
         (tau)
           if [[ `xrandr | grep 'HDMI2 connected'` ]]; then
@@ -39,7 +39,6 @@
         setxkbmap -layout jp -option japan:hztg_escape,caps:ctrl_modifier
 
       fcitx &
-      urxvtd -q -f -o
     '';
   };
 }

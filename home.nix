@@ -5,7 +5,6 @@ let
   hosts = {
     tau = ./tau.nix;
     kappa = ./kappa.nix;
-    nu = ./nu.nix;
   };
 in {
   imports = [

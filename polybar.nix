@@ -295,7 +295,7 @@ in {
           format-warn-underline = "#0561E8";
           format-warn = "<ramp> <label-warn>";
 
-          label = "%temperature%-c";
+          label = "%temperature-c%";
           label-warn = "%temperature-c%";
           label-warn-foreground = secondary;
 
@@ -421,14 +421,14 @@ in {
         };
 
         "module/spotify" = let
-          polybar-spotify = (import /home/manveru/go/src/github.com/manveru/polybar-spotify) { inherit pkgs; };
+          polybar-spotify = pkgs.callPackage /home/manveru/github/manveru/polybar-spotify { };
           # polybar-spotify = import (fetchGit {
           #   url = "https://github.com/manveru/polybar-spotify.git";
           #   ref = "0.1.1";
           # }) {};
         in {
           type = "custom/script";
-          exec = "${polybar-spotify}/bin/polybar-spotify -quiet %artist% - %title%";
+          exec = "${polybar-spotify}/bin/polybar-spotify %xesam:artist% - %xesam:title%";
           tail = true;
           interval = 2;
           click-left = "dbus-send --session --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause";

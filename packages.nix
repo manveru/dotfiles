@@ -92,7 +92,6 @@
     hex2nix
     hfsprogs
     hicolor-icon-theme
-    hipchat
     hunspell
     hunspellDicts.en-us
     i3lock-fancy
@@ -201,6 +200,7 @@
     up # writing Linux pipes with instant live preview
     vlc
     volumeicon
+    w3m-full
     wakatime
     wbox
     wireshark-qt

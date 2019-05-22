@@ -21,29 +21,32 @@
               Up    = "resize shrink height 10 px or 10 ppt";
               k     = "resize shrink height 10 px or 10 ppt";
               Down  = "resize grow height 10 px or 10 ppt";
-              j  = "resize grow height 10 px or 10 ppt";
+              j     = "resize grow height 10 px or 10 ppt";
 
               Escape = "mode default";
               Return = "mode default";
             };
           };
 
-          keybindings = let mod = "Mod4"; in {
-            XF86AudioPause         = "exec ${pkgs.playerctl}/bin/playerctl pause";
-            XF86AudioNext          = "exec ${pkgs.playerctl}/bin/playerctl next";
-            XF86AudioPrev          = "exec ${pkgs.playerctl}/bin/playerctl previous";
-            "${mod}+Return"        = "exec ${pkgs.termite}/bin/termite";
-            # "${mod}+Shift+Return"  = "exec urxvtc -pe confirm-paste -cd \"`xcwd`\"";
+          keybindings = let mod = "Mod4"; in with pkgs; {
+            XF86AudioPause         = "exec ${playerctl}/bin/playerctl pause";
+            XF86AudioNext          = "exec ${playerctl}/bin/playerctl next";
+            XF86AudioPrev          = "exec ${playerctl}/bin/playerctl previous";
+            XF86AudioLowerVolume   = "exec ${pulseaudioFull}/bin/pactl set-sink-volume 0 -5%";
+            XF86AudioRaiseVolume   = "exec ${pulseaudioFull}/bin/pactl set-sink-volume 0 +5%";
+            XF86AudioMute          = "exec ${pulseaudioFull}/bin/pactl set-sink-mute 0 toggle";
+
+            "${mod}+Return"        = "exec ${termite}/bin/termite";
             "${mod}+Shift+less"    = "exec xbacklight -dec 33%";
             "${mod}+Shift+greater" = "exec xbacklight -inc 33%";
-            "Muhenkan" = "exec \"if [[ $(xkblayout-state print %c) -eq 0 ]]; then xkblayout-state set 1; else xkblayout-state set 0; fi\"";
-            "Print" = "exec scrot --focused";
-            "${mod}+period" = "exec xkblayout-state set 1";
+            "Muhenkan"             = "exec \"if [[ $(xkblayout-state print %c) -eq 0 ]]; then xkblayout-state set 1; else xkblayout-state set 0; fi\"";
+            "Print"                = "exec scrot --focused";
+            "${mod}+period"        = "exec xkblayout-state set 1";
 
-            "${mod}+h"     = "focus left";
-            "${mod}+j"     = "focus down";
-            "${mod}+k"     = "focus up";
-            "${mod}+l"     = "focus right";
+            "${mod}+h" = "focus left";
+            "${mod}+j" = "focus down";
+            "${mod}+k" = "focus up";
+            "${mod}+l" = "focus right";
 
             "${mod}+Shift+h" = "move left";
             "${mod}+Shift+j" = "move down";
@@ -59,10 +62,10 @@
             "${mod}+Shift+e" = "reload";
             "${mod}+Shift+r" = "restart";
 
-            "${mod}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
-            "${mod}+Tab" = "exec ${pkgs.rofi}/bin/rofi -show window";
+            "${mod}+d"       = "exec ${rofi}/bin/rofi -show run";
+            "${mod}+Tab"     = "exec ${rofi}/bin/rofi -show window";
             "${mod}+Shift+d" = "exec i3-dmenu-desktop";
-            "${mod}+Shift+p" = "exec ${pkgs.i3lock-fancy}/bin/i3lock-fancy";
+            "${mod}+Shift+p" = "exec ${i3lock-fancy}/bin/i3lock-fancy";
 
             "${mod}+s" = "layout stacking";
             "${mod}+w" = "layout tabbed";
