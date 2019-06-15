@@ -38,6 +38,7 @@
   };
 
   services = {
+    rsibreak.enable = true;
     emacs.enable = true;
     flameshot.enable = true;
     pasystray.enable = true;
@@ -111,13 +112,6 @@
         pidgin-opensteamworks
         purple-hangouts
       ];
-    };
-
-    firefox = {
-      enable = true;
-      enableAdobeFlash = false;
-      enableGoogleTalk = true;
-      enableIcedTea = true;
     };
   };
 }

@@ -400,19 +400,20 @@ in {
         "module/headsetswitch" = let
           pactl = "${pkgs.pulseaudioLight}/bin/pactl";
           grep = "${pkgs.gnugrep}/bin/grep";
-          sed = "${pkgs.sed}/bin/sed";
+          sed = "${pkgs.gnused}/bin/sed";
         in {
           type = "custom/script";
           format-underline = "#0628FF";
           label = "%output%";
           exec = "${pactl} info" +
-            " | grep 'Default Sink'" +
-            " | sed 's/.*analog-stereo//'" +
-            " | sed 's/.*auto_null/${icons.microphone-disconnected}/'" +
-            " | sed 's/.*hdmi-stereo-extra.*/HDMI/'" +
-            " | sed 's/.*headset_head_unit/${icons.microphone}/'" +
-            " | sed 's/.*a2dp_sink/${icons.microphone-muted}/'" +
-            " | sed 's/.*hdmi-stereo/HDMI/'";
+            " | ${grep} 'Default Sink'" +
+            " | ${sed} 's/.*analog-stereo//'" +
+            " | ${sed} 's/.*analog-stereo//'" +
+            " | ${sed} 's/.*auto_null/${icons.microphone-disconnected}/'" +
+            " | ${sed} 's/.*hdmi-stereo-extra.*/HDMI/'" +
+            " | ${sed} 's/.*headset_head_unit/${icons.microphone}/'" +
+            " | ${sed} 's/.*a2dp_sink/${icons.microphone-muted}/'" +
+            " | ${sed} 's/.*hdmi-stereo/HDMI/'";
 
           tail = true;
           interval = 2;

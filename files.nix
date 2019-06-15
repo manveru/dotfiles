@@ -1,8 +1,65 @@
 { pkgs, ... }: {
+  home.file.".mozilla/firefox/nuc7kdrz.default/chrome/userChrome.css".text = ''
+    :root:not([customizing]) #navigator-toolbox {
+      background-color: #e2e2e2!important;
+    }
+
+    :root:not([customizing]) #navigator-toolbox #nav-bar {
+      min-height: 0!important;
+      max-height: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    :root:not([customizing]) #navigator-toolbox:focus-within #nav-bar {
+      max-height: 32px;
+      height: 32px;
+    }
+
+    :root:not([customizing]) .tabbrowser-tab:not([pinned="true"]) {
+      --tab-min-width: fit-content;
+      -moz-box-flex: 0!important;
+      max-width: 70px;
+    }
+
+    :root:not([customizing]) .tabbrowser-tab:not([pinned="true"]) .tab-stack {
+      flex-basis: 1;
+    }
+
+    :root:not([customizing]) .tab-content {
+      padding: 0 6px;
+    }
+
+    :root:not([customizing]) .tab-line,
+    :root:not([customizing]) .tab-text,
+    :root:not([customizing]) .tab-close-button {
+      display: none;
+    }
+
+    :root:not([customizing]) .tab-icon-image {
+      margin: 0!important;
+    }
+
+    /* Hide main tabs toolbar */
+    #main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+        visibility: collapse !important;
+    }
+
+    /* Hide sidebar header, when using Tree Style Tab. */
+    #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+        visibility: collapse;
+    }
+  '';
+
   home.file.".config/ranger/rc.conf".text = ''
     set preview_images true
     ext svg = feh --conversion-timeout 2 -- "$@"
   '';
+
   home.file.".config/Dharkael/flameshot.ini".text = ''
     [General]
     disabledTrayIcon=false

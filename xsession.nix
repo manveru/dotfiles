@@ -29,14 +29,8 @@
           if [[ `xrandr | grep 'HDMI2 connected'` ]]; then
             xrandr --output eDP1 --auto --below HDMI2 --output HDMI2 --auto
           fi
-
-          setxkbmap -layout en_US
           ;;
       esac
-
-      # Realforce
-      lsusb | grep 0853:0142 && \
-        setxkbmap -layout jp -option japan:hztg_escape,caps:ctrl_modifier
 
       fcitx &
     '';

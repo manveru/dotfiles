@@ -37,7 +37,7 @@
   '';
 
   services.compton = {
-    enable = true;
+    enable = false;
     vSync = "opengl";
     fade = true;
     inactiveOpacity = "0.9";
