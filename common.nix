@@ -15,6 +15,8 @@
     ./xresources.nix
     ./xsession.nix
     ./zsh.nix
+    ./mail.nix
+    ./lorri.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -99,8 +101,8 @@
 
     home-manager = {
       enable = true;
-      path = https://github.com/rycee/home-manager/archive/master.tar.gz;
-      # path = "/home/manveru/github/rycee/home-manager";
+      # path = https://github.com/rycee/home-manager/archive/master.tar.gz;
+      path = "/home/manveru/github/rycee/home-manager";
     };
 
     pidgin = {

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
 
@@ -15,12 +14,10 @@
       ".tern-port"
     ];
 
-    userEmail = "michael.fellinger@xing.com";
+    userEmail = "github@manveru.dev";
     userName = "Michael Fellinger";
 
-    signing = {
-      key = "068A7479";
-    };
+    signing = { key = "068A7479"; };
 
     extraConfig = {
       core = {
@@ -29,56 +26,32 @@
         editor = "nvim";
         # excludesfile = /home/manveru/.gitignore_global;
       };
-      credential = {
-        helper = "netrc";
-      };
-      status = {
-        showUntrackedFiles = "all";
-      };
-      transfer = {
-        fsckobjects = false;
-      };
-      push = {
-        default = "current";
-      };
-      pull = {
-        default = "current";
-      };
-      color = {
-        ui = true;
-      };
+      credential = { helper = "netrc"; };
+      status = { showUntrackedFiles = "all"; };
+      transfer = { fsckobjects = false; };
+      push = { default = "current"; };
+      pull = { default = "current"; };
+      color = { ui = true; };
       merge = {
         ff = "only";
         conflictstyle = "diff3";
         summary = true;
         tool = "vimdiff";
       };
-      branch = {
-        autoSetupMerge = "always";
-      };
-      instaweb = {
-        port = 1234;
-      };
-      ui = {
-        color = true;
-      };
+      branch = { autoSetupMerge = "always"; };
+      instaweb = { port = 1234; };
+      ui = { color = true; };
       rebase = {
         stat = true;
         autoSquash = true;
         autostash = true;
       };
-      diff = {
-        tool = "icdiff";
-      };
-      difftool = {
-        prompt = false;
-      };
-      "difftool \"icdiff\"" = {
-        cmd = "${pkgs.icdiff}/bin/icdiff --line-numbers $LOCAL $REMOTE";
-      };
-      stash = {
-        showPatch = true;
-      };
+      # diff = { tool = "icdiff"; };
+      # difftool = { prompt = false; };
+      # "difftool \"icdiff\"" = {
+      #   cmd = "${pkgs.icdiff}/bin/icdiff --line-numbers $LOCAL $REMOTE";
+      # };
+      stash = { showPatch = true; };
     };
     aliases = {
       st = "status";
@@ -95,18 +68,20 @@
       stat = "status -s";
       unadd = "rm --cached";
       dlog = "log --decorate";
-      glog = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
-      slog = ''log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"'';
-      addprx = ''
-        !f() { b=`git symbolic-ref -q --short HEAD` && \
-        git fetch origin pull/$1/head:pr/$1 && \
-        git fetch -f origin pull/$1/merge:PR_MERGE_HEAD && \
-        git rebase --onto $b PR_MERGE_HEAD^ pr/$1 && \
-        git branch -D PR_MERGE_HEAD && \
-        git checkout $b && echo && \
-        git diff --stat $b..pr/$1 && echo && \
-        git slog $b..pr/$1; }; f
-      '';
+      # glog =
+      # "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'";
+      # slog = ''
+      #   log --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"'';
+      # addprx = ''
+      #   !f() { b=`git symbolic-ref -q --short HEAD` && \
+      #   git fetch origin pull/$1/head:pr/$1 && \
+      #   git fetch -f origin pull/$1/merge:PR_MERGE_HEAD && \
+      #   git rebase --onto $b PR_MERGE_HEAD^ pr/$1 && \
+      #   git branch -D PR_MERGE_HEAD && \
+      #   git checkout $b && echo && \
+      #   git diff --stat $b..pr/$1 && echo && \
+      #   git slog $b..pr/$1; }; f
+      # '';
     };
   };
 }

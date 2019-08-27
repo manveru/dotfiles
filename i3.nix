@@ -105,14 +105,6 @@
               command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
               always = true;
             }
-            # {
-            #   command = "${pkgs.skypeforlinux}/bin/skypeforlinux";
-            #   always = true;
-            # }
-            # {
-            #   command = "${pkgs.pidgin}/bin/pidgin";
-            #   always = true;
-            # }
           ];
 
           bars = [];

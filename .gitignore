@@ -1,1 +1,3 @@
 private.nix
+node_modules/
+pkgs/backgrounds/images/

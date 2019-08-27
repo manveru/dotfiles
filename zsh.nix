@@ -1,21 +1,25 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # .zshenv
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+
     history = {
       ignoreDups = true;
       save = 1000000;
       size = 1000000;
     };
+
     shellAliases = {
       v = "vim";
       c = "clear";
+      p = "pijul";
       open = "xdg-open";
-      vpn-on = "ENABLE_VPN=true sudo --preserve-env ENABLE_VPN nixos-rebuild switch";
+      vpn-on =
+      "ENABLE_VPN=true sudo --preserve-env ENABLE_VPN nixos-rebuild switch";
       vpn-off = "sudo nixos-rebuild switch";
+      icat = "kitty +kitten icat";
     };
 
     initExtra = ''
@@ -43,10 +47,6 @@
       # eval "$(direnv hook zsh)"
       eval "$(${pkgs.keychain}/bin/keychain --eval --quiet --noask --systemd ssh id_ed25519)"
 
-      # can't use fzf plugin because the share/shell folder is missing
-      source ${pkgs.fzf}/share/fzf/completion.zsh
-      source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-
       nixify() {
         if [ ! -e shell.nix ]; then
           cp ${./shell.template.nix} shell.nix
@@ -59,8 +59,11 @@
         fi
       }
 
+      ${pkgs.kitty}/bin/kitty + complete setup zsh | source /dev/stdin
+
       unset RPS1
     '';
+
     oh-my-zsh = {
       enable = true;
       theme = "ys";
@@ -81,6 +84,7 @@
         "yarn"
         "zsh-navigation-tools"
         "mix"
+        "pijul"
       ];
     };
   };

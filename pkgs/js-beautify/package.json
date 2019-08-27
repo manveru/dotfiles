@@ -1,0 +1,9 @@
+{
+  "name": "js-beautify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "js-beautify": "^1.10.2"
+  }
+}

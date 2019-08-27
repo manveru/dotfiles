@@ -12,29 +12,33 @@ let
     down = "";
     ethernet = "";
   };
+
+  nixpkgs-unstable = import (fetchTarball {
+    url = https://github.com/nixos/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+  }) { };
 in {
   services = {
     polybar = {
       enable = true;
 
-      package = pkgs.polybar.override {
-        alsaSupport   = true;
+      package = nixpkgs-unstable.polybar.override {
+        alsaSupport = true;
         githubSupport = true;
-        mpdSupport    = true;
-        pulseSupport  = true;
+        mpdSupport = true;
+        pulseSupport = true;
         i3GapsSupport = true;
       };
 
       config = let
-        background = "\${xrdb:color0:#222}";
-        background-alt = "\${xrdb:color0:#222}";
+        background = "#99000000";
+        background-alt = "#99000000";
 
-        foreground = "\${xrdb:color7:#222}";
-        foreground-alt = "\${xrdb:color7:#222}";
+        foreground = "#ffdddddd";
+        foreground-alt = "#ffdddddd";
 
-        primary = "\${xrdb:color1:#222}";
-        secondary = "\${xrdb:color2:#222}";
-        alert = "\${xrdb:color3:#222}";
+        primary = "#ff006633";
+        secondary = "#ff003333";
+        alert = "#ff330000";
 
         fonts = {
           font-0 = "D2Coding for Powerline:pixelsize=10;0";
@@ -68,7 +72,8 @@ in {
 
           modules-left = "i3";
           modules-center = "xwindow";
-          modules-right = "filesystem wlan eth memory cpu battery temperature headsetswitch date";
+          modules-right =
+          "filesystem wlan eth memory cpu battery temperature headsetswitch date";
 
           tray-position = "right";
           tray-padding = 3;
@@ -96,11 +101,13 @@ in {
 
           modules-left = "i3";
           modules-center = "xwindow";
-          modules-right = "filesystem wlan eth memory cpu volume battery temperature date";
+          modules-right =
+          "filesystem wlan eth memory cpu volume battery temperature date";
         };
 
         "settings" = {
           screenchange-reload = "true";
+          pseudo-transparency = true;
         };
 
         "global/wm" = {
@@ -246,7 +253,8 @@ in {
           format-connected-underline = "#06FFCC";
           format-disconnected-underline = "#06FFCC";
           format-connected-prefix-foreground = foreground-alt;
-          label-connected = "${icons.ethernet} %ifname% (${icons.up} %upspeed:9% ${icons.down} %downspeed:9%)";
+          label-connected =
+          "${icons.ethernet} %ifname% (${icons.up} %upspeed:9% ${icons.down} %downspeed:9%)";
 
           # format-disconnected = "<label-disconnected>";
           # label-disconnected = "";
@@ -258,7 +266,8 @@ in {
           interval = "3.0";
 
           format-connected = "<ramp-signal> <label-connected>";
-          label-connected = "%essid% ${icons.wifi} (${icons.up} %upspeed:9% ${icons.down} %downspeed:9%)";
+          label-connected =
+          "%essid% ${icons.wifi} (${icons.up} %upspeed:9% ${icons.down} %downspeed:9%)";
 
           ramp-signal-0 = "▁";
           ramp-signal-1 = "▂";
@@ -343,7 +352,6 @@ in {
           card = "intel_backlight";
         };
 
-
         "module/battery" = {
           type = "internal/battery";
           battery = "BAT0";
@@ -405,34 +413,38 @@ in {
           type = "custom/script";
           format-underline = "#0628FF";
           label = "%output%";
-          exec = "${pactl} info" +
-            " | ${grep} 'Default Sink'" +
-            " | ${sed} 's/.*analog-stereo//'" +
-            " | ${sed} 's/.*analog-stereo//'" +
-            " | ${sed} 's/.*auto_null/${icons.microphone-disconnected}/'" +
-            " | ${sed} 's/.*hdmi-stereo-extra.*/HDMI/'" +
-            " | ${sed} 's/.*headset_head_unit/${icons.microphone}/'" +
-            " | ${sed} 's/.*a2dp_sink/${icons.microphone-muted}/'" +
-            " | ${sed} 's/.*hdmi-stereo/HDMI/'";
+          exec = "${pactl} info" + " | ${grep} 'Default Sink'"
+          + " | ${sed} 's/.*analog-stereo//'"
+          + " | ${sed} 's/.*analog-stereo//'"
+          + " | ${sed} 's/.*auto_null/${icons.microphone-disconnected}/'"
+          + " | ${sed} 's/.*hdmi-stereo-extra.*/HDMI/'"
+          + " | ${sed} 's/.*headset_head_unit/${icons.microphone}/'"
+          + " | ${sed} 's/.*a2dp_sink/${icons.microphone-muted}/'"
+          + " | ${sed} 's/.*hdmi-stereo/HDMI/'";
 
           tail = true;
           interval = 2;
-          click-left = "${pactl} set-card-profile bluez_card.2C_41_A1_83_C7_98 a2dp_sink";
-          click-right = "${pactl} set-card-profile bluez_card.2C_41_A1_83_C7_98 headset_head_unit";
+          click-left =
+          "${pactl} set-card-profile bluez_card.2C_41_A1_83_C7_98 a2dp_sink";
+          click-right =
+          "${pactl} set-card-profile bluez_card.2C_41_A1_83_C7_98 headset_head_unit";
         };
 
         "module/spotify" = let
-          polybar-spotify = pkgs.callPackage /home/manveru/github/manveru/polybar-spotify { };
+          polybar-spotify =
+          pkgs.callPackage /home/manveru/github/manveru/polybar-spotify { };
           # polybar-spotify = import (fetchGit {
           #   url = "https://github.com/manveru/polybar-spotify.git";
           #   ref = "0.1.1";
           # }) {};
         in {
           type = "custom/script";
-          exec = "${polybar-spotify}/bin/polybar-spotify %xesam:artist% - %xesam:title%";
+          exec =
+          "${polybar-spotify}/bin/polybar-spotify %xesam:artist% - %xesam:title%";
           tail = true;
           interval = 2;
-          click-left = "dbus-send --session --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause";
+          click-left =
+          "dbus-send --session --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause";
         };
       };
     };
