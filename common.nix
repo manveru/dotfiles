@@ -17,6 +17,7 @@
     ./zsh.nix
     ./mail.nix
     ./lorri.nix
+    ./kitty.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

@@ -36,7 +36,7 @@
             XF86AudioRaiseVolume   = "exec ${pulseaudioFull}/bin/pactl set-sink-volume 0 +5%";
             XF86AudioMute          = "exec ${pulseaudioFull}/bin/pactl set-sink-mute 0 toggle";
 
-            "${mod}+Return"        = "exec ${termite}/bin/termite";
+            "${mod}+Return"        = "exec ${kitty}/bin/kitty";
             "${mod}+Shift+less"    = "exec xbacklight -dec 33%";
             "${mod}+Shift+greater" = "exec xbacklight -inc 33%";
             "Muhenkan"             = "exec \"if [[ $(xkblayout-state print %c) -eq 0 ]]; then xkblayout-state set 1; else xkblayout-state set 0; fi\"";

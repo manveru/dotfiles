@@ -14,10 +14,13 @@
       ".tern-port"
     ];
 
-    userEmail = "github@manveru.dev";
+    userEmail = "michael.fellinger@iohk.io";
     userName = "Michael Fellinger";
 
-    signing = { key = "068A7479"; };
+    signing = {
+      key = "AD58D86AC44000254FE9DD18F4D029589C005F89";
+      signByDefault = true;
+    };
 
     extraConfig = {
       core = {

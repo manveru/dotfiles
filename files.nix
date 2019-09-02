@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+  home.file.".config/starship.toml".text = ''
+    [nix_shell]
+    use_name = false
+  '';
+
   # home.file.".mozilla/firefox/nuc7kdrz.default/chrome/userChrome.css".text = ''
 
   #   /* Hide main tabs toolbar */

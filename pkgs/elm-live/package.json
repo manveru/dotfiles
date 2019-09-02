@@ -1,0 +1,9 @@
+{
+  "name": "elm-live",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "elm-live": "^3.4.1"
+  }
+}

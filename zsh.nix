@@ -12,12 +12,14 @@
     };
 
     shellAliases = {
-      v = "vim";
+      e = "emacsclient -c --socket-name /tmp/emacs1000/server";
+      v = "emacsclient -nw -c --socket-name /tmp/emacs1000/server";
+      # v = "vim";
       c = "clear";
       p = "pijul";
       open = "xdg-open";
       vpn-on =
-      "ENABLE_VPN=true sudo --preserve-env ENABLE_VPN nixos-rebuild switch";
+        "ENABLE_VPN=true sudo --preserve-env ENABLE_VPN nixos-rebuild switch";
       vpn-off = "sudo nixos-rebuild switch";
       icat = "kitty +kitten icat";
     };
@@ -61,7 +63,12 @@
 
       ${pkgs.kitty}/bin/kitty + complete setup zsh | source /dev/stdin
 
+      fpath+=~/github/input-output-hk/iohk-ops/
+      compinit
+
       unset RPS1
+
+      eval "$(starship init zsh)"
     '';
 
     oh-my-zsh = {

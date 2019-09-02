@@ -1,0 +1,44 @@
+Arguments: 
+  /nix/store/avr9pmhlzfvvpz74fxixx9mzjypikf05-nodejs-8.15.1/bin/node /home/manveru/.nix-profile/bin/yarn
+
+PATH: 
+  /home/manveru/go/bin:/home/manveru/bin:/run/wrappers/bin:/etc/profiles/per-user/manveru/bin:/home/manveru/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  8.15.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@elm-live: Request "https://registry.yarnpkg.com/@elm-live" returned a 405
+      at Request.params.callback [as _callback] (/nix/store/rh90cdk7fiqj51bv20zzprp1rp7hp0fn-yarn-1.13.0/libexec/yarn/lib/cli.js:66264:18)
+      at Request.self.callback (/nix/store/rh90cdk7fiqj51bv20zzprp1rp7hp0fn-yarn-1.13.0/libexec/yarn/lib/cli.js:129397:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (/nix/store/rh90cdk7fiqj51bv20zzprp1rp7hp0fn-yarn-1.13.0/libexec/yarn/lib/cli.js:130369:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (/nix/store/rh90cdk7fiqj51bv20zzprp1rp7hp0fn-yarn-1.13.0/libexec/yarn/lib/cli.js:130291:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+    "name": "elm-live",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+      "@elm-live": "^3.4.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

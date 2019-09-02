@@ -7,6 +7,7 @@
     dynamicTitle = true;
     filterUnmatchedUrls = true;
     font = "Cousine for Powerline 12";
+    # font = "Fira Code 12";
     # font = "DejaVu Sans Mono Oblique for Powerline 12";
     # font = "DejaVu Sans Mono for Powerline 12";
     # font = "Droid Sans Mono Dotted for Powerline 12";
