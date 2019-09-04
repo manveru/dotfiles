@@ -28,34 +28,36 @@
     }) { inherit pkgs; };
 
   in with pkgs; [
-    nixpkgs-unstable.starship
-    nixpkgs-unstable.vscode-with-extensions
-    nixpkgs-unstable.elmPackages.elm
-    nixpkgs-unstable.elmPackages.elm-test
-    nixpkgs-unstable.elmPackages.elm-format
-    nixpkgs-unstable.elmPackages.elm-analyse
-    nixpkgs-unstable.elmPackages.elm-doc-preview
-    nixpkgs-unstable.elmPackages.elmi-to-json
-    yarn2nixSource.yarn2nix
-    yarn
+    discord
     elm-language-server
     elm-live
-    nixpkgs-unstable.pijul
-    js-beautify
+    font-manager
+    # hie.ghc
+    # hie.hies
+    # hie.stack
     i3lock-fancy
+    js-beautify
+    kitty
     kubernetes
+    lastpass-cli
     # lorri
+    magic-wormhole
     minikube
     nixfmt
-    discord
-    magic-wormhole
+    nixpkgs-unstable.elmPackages.elm
+    nixpkgs-unstable.elmPackages.elm-analyse
+    nixpkgs-unstable.elmPackages.elm-doc-preview
+    nixpkgs-unstable.elmPackages.elm-format
+    nixpkgs-unstable.elmPackages.elmi-to-json
+    nixpkgs-unstable.elmPackages.elm-test
     nixpkgs-unstable.insomnia
-    lastpass-cli
-    kitty
-    font-manager
+    nixpkgs-unstable.pijul
+    nixpkgs-unstable.python37Packages.python-language-server
+    nixpkgs-unstable.starship
+    nixpkgs-unstable.vscode-with-extensions
     sqlite
-    # hie.hies
-    # hie.ghc
-    # hie.stack
+    tokei
+    yarn
+    yarn2nixSource.yarn2nix
   ];
 }
