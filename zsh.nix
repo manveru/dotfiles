@@ -73,7 +73,7 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "ys";
+      # theme = "ys";
       plugins = [
         "aws"
         "docker"
