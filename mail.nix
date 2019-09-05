@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   accounts.email.accounts = {
     "manveru@manveru.dev" = {
       primary = true;
@@ -31,6 +30,7 @@
         enable = true;
         boxes = [ "Inbox" ];
 
+        onNotify = "true";
         onNotifyPost.mail = ''
           ${pkgs.isync}/bin/mbsync --all && \
           ${pkgs.notmuch}/bin/notmuch new && \
@@ -40,14 +40,28 @@
     };
   };
 
-  programs.notmuch = {
-    enable = true;
-    # hooks.preNew = "${pkgs.isync}/bin/mbsync --all";
-  };
+  programs = {
+    alot.enable = true;
+    mbsync.enable = true;
 
-  programs.alot.enable = true;
-  programs.astroid.enable = true;
-  programs.mbsync.enable = true;
+    notmuch = {
+      enable = true;
+      # hooks.preNew = "${pkgs.isync}/bin/mbsync --all";
+    };
+
+    astroid = {
+      enable = true;
+      extraConfig = {
+        startup = {
+          queries = {
+            "inbox" = "tag:inbox";
+            "unread" = "tag:unread";
+            "flagged" = "tag:flagged";
+          };
+        };
+      };
+    };
+  };
 
   services = {
     imapnotify = { enable = true; };
